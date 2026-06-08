@@ -4,18 +4,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Principais Doenças da Soja, Trigo e Milho</title>
+<title>Doenças da Soja, Trigo e Milho - Agrinho 2026</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Arial, sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
-    background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');
+    background:url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80");
     background-size:cover;
     background-position:center;
     background-attachment:fixed;
@@ -26,103 +26,124 @@ header{
     background:rgba(27,94,32,0.95);
     color:white;
     text-align:center;
-    padding:30px;
+    padding:35px;
 }
 
 header h1{
-    font-size:2.5rem;
+    font-size:2.8rem;
     margin-bottom:10px;
+}
+
+header p{
+    font-size:1.1rem;
 }
 
 .container{
     width:90%;
-    max-width:1200px;
+    max-width:1300px;
     margin:auto;
     padding:30px 0;
 }
 
 .cultura{
     display:flex;
-    gap:30px;
     align-items:center;
+    gap:30px;
     background:rgba(255,255,255,0.96);
-    margin-bottom:30px;
-    border-radius:15px;
+    margin-bottom:35px;
+    border-radius:18px;
     overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-    transition:0.3s;
-}
-
-.cultura:hover{
-    transform:translateY(-5px);
+    box-shadow:0 5px 20px rgba(0,0,0,0.25);
 }
 
 .cultura img{
     width:45%;
-    height:400px;
+    height:420px;
     object-fit:cover;
+    transition:0.5s;
+}
+
+.cultura img:hover{
+    transform:scale(1.08);
+    filter:brightness(1.1);
 }
 
 .info{
-    padding:20px;
+    padding:25px;
 }
 
 .info h2{
     color:#2e7d32;
     margin-bottom:15px;
+    font-size:2rem;
 }
 
 .doenca{
     background:#e8f5e9;
     padding:15px;
     margin:15px 0;
-    border-left:5px solid #2e7d32;
-    border-radius:8px;
+    border-left:6px solid #2e7d32;
+    border-radius:10px;
 }
 
 .doenca h3{
-    margin-bottom:10px;
+    color:#1b5e20;
+    margin-bottom:8px;
 }
 
 .galeria{
     background:rgba(255,255,255,0.96);
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:30px;
+    padding:25px;
+    border-radius:18px;
+    margin-top:20px;
 }
 
 .galeria h2{
-    color:#2e7d32;
     text-align:center;
+    color:#2e7d32;
     margin-bottom:20px;
 }
 
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
+    gap:20px;
 }
 
 .grid img{
     width:100%;
-    height:220px;
+    height:230px;
     object-fit:cover;
-    border-radius:10px;
+    border-radius:12px;
+    transition:0.4s;
+}
+
+.grid img:hover{
+    transform:scale(1.05);
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
 }
 
 footer{
-    background:rgba(27,94,32,0.95);
+    background:rgba(27,94,32,0.97);
     color:white;
     text-align:center;
-    padding:25px;
+    padding:30px;
     margin-top:30px;
 }
 
-footer p{
-    margin:5px 0;
+footer h3{
+    margin-bottom:10px;
+}
+
+.certificado{
+    margin-top:15px;
+    background:rgba(255,255,255,0.1);
+    padding:15px;
+    border-radius:10px;
 }
 
 @media(max-width:768px){
+
     .cultura{
         flex-direction:column;
     }
@@ -130,6 +151,10 @@ footer p{
     .cultura img{
         width:100%;
         height:250px;
+    }
+
+    header h1{
+        font-size:2rem;
     }
 }
 </style>
@@ -139,14 +164,14 @@ footer p{
 
 <header>
     <h1>🌱 Principais Doenças da Soja, Trigo e Milho 🌾</h1>
-    <p>Projeto Educacional - Agrinho 2026</p>
+    <p>Projeto Agrinho 2026 - Educação Ambiental e Agricultura Sustentável</p>
 </header>
 
 <div class="container">
 
     <!-- SOJA -->
     <div class="cultura">
-        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9" alt="Plantação de Soja">
+        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=900&q=80" alt="Lavoura de Soja">
 
         <div class="info">
             <h2>🌱 Soja</h2>
@@ -155,18 +180,13 @@ footer p{
                 <h3>Ferrugem Asiática</h3>
                 <p>
                     A ferrugem asiática é causada pelo fungo
-                    <strong>Phakopsora pachyrhizi</strong> e é uma das
-                    doenças mais perigosas da soja. Os primeiros sintomas
-                    aparecem como pequenas manchas escuras nas folhas.
+                    <strong>Phakopsora pachyrhizi</strong>.
+                    É uma das doenças mais perigosas da soja,
+                    provocando manchas nas folhas e desfolha precoce.
                 </p>
                 <p>
-                    Quando a doença avança, ocorre desfolha precoce,
-                    redução da fotossíntese e queda na produtividade,
-                    podendo causar grandes prejuízos econômicos.
-                </p>
-                <p>
-                    O controle é realizado por meio do monitoramento
-                    constante e aplicação correta de fungicidas.
+                    Quando não controlada, pode reduzir
+                    significativamente a produtividade da lavoura.
                 </p>
             </div>
 
@@ -177,12 +197,8 @@ footer p{
                     <strong>Sclerotinia sclerotiorum</strong>.
                 </p>
                 <p>
-                    A doença produz lesões claras nos caules e folhas,
-                    formando uma massa branca semelhante ao algodão.
-                </p>
-                <p>
-                    Pode provocar o tombamento das plantas e reduzir
-                    significativamente a produção.
+                    Forma uma estrutura branca semelhante ao algodão
+                    e compromete o desenvolvimento das plantas.
                 </p>
             </div>
         </div>
@@ -190,7 +206,7 @@ footer p{
 
     <!-- TRIGO -->
     <div class="cultura">
-        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" alt="Plantação de Trigo">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Lavoura de Trigo">
 
         <div class="info">
             <h2>🌾 Trigo</h2>
@@ -198,28 +214,23 @@ footer p{
             <div class="doenca">
                 <h3>Giberela</h3>
                 <p>
-                    A giberela é causada principalmente pelo fungo
-                    <strong>Fusarium graminearum</strong>.
+                    A giberela é causada por fungos do gênero
+                    <strong>Fusarium</strong>.
                 </p>
                 <p>
-                    Ela afeta as espigas do trigo, deixando os grãos
-                    menores, deformados e com menor qualidade.
-                </p>
-                <p>
-                    Além dos prejuízos econômicos, pode produzir toxinas
-                    prejudiciais à saúde humana e animal.
+                    Afeta diretamente as espigas, reduzindo a
+                    qualidade e o rendimento dos grãos.
                 </p>
             </div>
 
             <div class="doenca">
                 <h3>Ferrugem da Folha</h3>
                 <p>
-                    Caracteriza-se pelo aparecimento de pequenas pústulas
-                    alaranjadas espalhadas pelas folhas.
+                    Caracterizada por pequenas pústulas alaranjadas
+                    que aparecem nas folhas.
                 </p>
                 <p>
-                    A doença reduz a capacidade fotossintética da planta,
-                    diminuindo o desenvolvimento e a produção de grãos.
+                    Reduz a fotossíntese e compromete a produção.
                 </p>
             </div>
         </div>
@@ -227,7 +238,7 @@ footer p{
 
     <!-- MILHO -->
     <div class="cultura">
-        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b" alt="Plantação de Milho">
+        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=900&q=80" alt="Lavoura de Milho">
 
         <div class="info">
             <h2>🌽 Milho</h2>
@@ -235,31 +246,24 @@ footer p{
             <div class="doenca">
                 <h3>Cercosporiose</h3>
                 <p>
-                    A cercosporiose é causada pelo fungo
+                    Doença causada pelo fungo
                     <strong>Cercospora zeae-maydis</strong>.
                 </p>
                 <p>
-                    Provoca manchas alongadas e cinzentas nas folhas,
-                    reduzindo a área fotossintética da planta.
-                </p>
-                <p>
-                    Em casos severos, pode reduzir drasticamente a
-                    produtividade da lavoura.
+                    Produz manchas alongadas e cinzentas nas folhas,
+                    reduzindo a produtividade da lavoura.
                 </p>
             </div>
 
             <div class="doenca">
                 <h3>Ferrugem Polissora</h3>
                 <p>
-                    É causada pelo fungo <strong>Puccinia polysora</strong>.
+                    Provocada pelo fungo
+                    <strong>Puccinia polysora</strong>.
                 </p>
                 <p>
-                    Os sintomas aparecem como pústulas marrons nas folhas,
-                    prejudicando o crescimento e o enchimento dos grãos.
-                </p>
-                <p>
-                    O uso de híbridos resistentes é uma das principais
-                    formas de controle.
+                    Produz pústulas marrons nas folhas e interfere
+                    no crescimento saudável das plantas.
                 </p>
             </div>
         </div>
@@ -267,24 +271,40 @@ footer p{
 
     <!-- GALERIA -->
     <div class="galeria">
-        <h2>📸 Galeria de Lavouras</h2>
+        <h2>📸 Galeria Agrícola</h2>
 
         <div class="grid">
-            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9" alt="Soja">
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" alt="Trigo">
-            <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b" alt="Milho">
-            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854" alt="Agricultura">
+            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80" alt="Soja">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Trigo">
+            <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=80" alt="Milho">
+            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80" alt="Agricultura">
         </div>
     </div>
 
 </div>
 
 <footer>
-    <h3>Projeto Agrinho 2026</h3>
-    <p>Principais Doenças da Soja, Trigo e Milho</p>
-    <p>Trabalho sobre sanidade vegetal e produção agrícola.</p>
-    <p>Aluno(a): ________________________</p>
-    <p>Escola: ________________________</p>
+
+    <h3>🏆 Certificado de Conscientização Ambiental</h3>
+
+    <p>
+        Este projeto foi desenvolvido com o objetivo de promover
+        o conhecimento sobre a agricultura sustentável e a importância
+        da preservação do meio ambiente.
+    </p>
+
+    <div class="certificado">
+        <p><strong>Aluno(a):</strong> SEU NOME AQUI</p>
+        <p><strong>E-mail:</strong> seuemail@exemplo.com</p>
+        <p><strong>Projeto:</strong> Agrinho 2026</p>
+        <p><strong>Tema:</strong> Doenças da Soja, Trigo e Milho</p>
+        <p><strong>Reconhecimento:</strong> Participação em ações de conscientização ambiental e valorização da agricultura sustentável.</p>
+    </div>
+
+    <p style="margin-top:15px;">
+        © 2026 - Projeto Educacional Agrinho
+    </p>
+
 </footer>
 
 </body>
