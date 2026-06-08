@@ -1,11 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doenças da Soja, Trigo e Milho</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#f4f7f2;
+    color:#333;
+}
+
+header{
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+header h1{
+    font-size:2.5rem;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:30px 0;
+}
+
+.cultura{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    background:white;
+    margin-bottom:30px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cultura img{
+    width:45%;
+    height:350px;
+    object-fit:cover;
+}
+
+.info{
+    padding:20px;
+}
+
+.info h2{
+    color:#2e7d32;
+    margin-bottom:15px;
+}
+
+.doenca{
+    background:#e8f5e9;
+    padding:10px;
+    border-left:5px solid #2e7d32;
+    margin:10px 0;
+}
+
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
 </head>
+
 <body>
-    
+
+<header>
+    <h1>Principais Doenças da Soja, Trigo e Milho</h1>
+    <p>Trabalho Escolar / Agrinho 2026</p>
+</header>
+
+<div class="container">
+
+    <!-- SOJA -->
+    <div class="cultura">
+        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9" alt="Lavoura de Soja">
+
+        <div class="info">
+            <h2>🌱 Soja</h2>
+
+            <div class="doenca">
+                <h3>Ferrugem Asiática</h3>
+                <p>
+                    Doença causada pelo fungo
+                    <strong>Phakopsora pachyrhizi</strong>.
+                    Provoca manchas nas folhas e queda precoce,
+                    reduzindo significativamente a produtividade.
+                </p>
+            </div>
+
+            <div class="doenca">
+                <h3>Mofo Branco</h3>
+                <p>
+                    Produz lesões esbranquiçadas e pode causar
+                    grandes perdas na lavoura.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRIGO -->
+    <div class="cultura">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" alt="Lavoura de Trigo">
+
+        <div class="info">
+            <h2>🌾 Trigo</h2>
+
+            <div class="doenca">
+                <h3>Giberela</h3>
+                <p>
+                    Doença causada por fungos do gênero
+                    <strong>Fusarium</strong>.
+                    Afeta espigas e grãos, reduzindo a qualidade
+                    da produção.
+                </p>
+            </div>
+
+            <div class="doenca">
+                <h3>Ferrugem da Folha</h3>
+                <p>
+                    Forma pequenas pústulas alaranjadas nas folhas,
+                    prejudicando a fotossíntese.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MILHO -->
+    <div class="cultura">
+        <img src="https://images.unsplash.com/photo-1601593768799-76f6b9d6f6f7" alt="Lavoura de Milho">
+
+        <div class="info">
+            <h2>🌽 Milho</h2>
+
+            <div class="doenca">
+                <h3>Cercosporiose</h3>
+                <p>
+                    Provoca manchas cinzentas e alongadas nas folhas,
+                    podendo reduzir drasticamente a produtividade.
+                </p>
+            </div>
+
+            <div class="doenca">
+                <h3>Ferrugem Polissora</h3>
+                <p>
+                    Caracterizada por pústulas marrons nas folhas,
+                    comprometendo o desenvolvimento da planta.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Projeto Educacional - Agrinho 2026</p>
+</footer>
+
 </body>
 </html>
