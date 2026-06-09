@@ -1,312 +1,339 @@
-```html
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Doenças da Soja, Trigo e Milho - Agrinho 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',Arial,sans-serif;color:#222;background:#f5f5f0;}
+
+/* NAV */
+nav{
+  background:#fff;
+  border-bottom:1px solid #e0e0d8;
+  padding:0 60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:64px;
+  position:sticky;top:0;z-index:100;
 }
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-icon{width:36px;height:36px;background:#1b5e20;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;}
+.logo-text{font-size:1.05rem;font-weight:700;color:#1b5e20;letter-spacing:-0.3px;}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{text-decoration:none;color:#555;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:#1b5e20;}
+.nav-cta{background:#1b5e20;color:#fff;padding:8px 20px;border-radius:6px;font-size:0.85rem;font-weight:600;text-decoration:none;transition:background 0.2s;}
+.nav-cta:hover{background:#145214;}
 
-body{
-    background:url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80");
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-    color:#333;
+/* HERO */
+.hero{
+  background:#fff;
+  padding:80px 60px 60px;
+  display:flex;
+  align-items:center;
+  gap:60px;
+  max-width:1300px;
+  margin:0 auto;
 }
+.hero-text{flex:1;}
+.badge{display:inline-block;background:#e8f5e9;color:#1b5e20;font-size:0.78rem;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:20px;letter-spacing:0.5px;text-transform:uppercase;}
+.hero-text h1{font-size:2.6rem;font-weight:700;color:#111;line-height:1.25;margin-bottom:18px;letter-spacing:-0.8px;}
+.hero-text h1 span{color:#1b5e20;}
+.hero-text p{font-size:1.05rem;color:#666;line-height:1.7;margin-bottom:32px;max-width:480px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{background:#1b5e20;color:#fff;padding:12px 28px;border-radius:8px;font-size:0.9rem;font-weight:600;text-decoration:none;transition:background 0.2s;}
+.btn-primary:hover{background:#145214;}
+.btn-outline{border:1.5px solid #1b5e20;color:#1b5e20;padding:12px 28px;border-radius:8px;font-size:0.9rem;font-weight:600;text-decoration:none;transition:all 0.2s;}
+.btn-outline:hover{background:#e8f5e9;}
+.hero-img{flex:1;max-width:520px;}
+.hero-img img{width:100%;height:360px;object-fit:cover;border-radius:16px;display:block;}
 
-header{
-    background:rgba(27,94,32,0.95);
-    color:white;
-    text-align:center;
-    padding:35px;
+/* STATS BAR */
+.stats-bar{
+  background:#1b5e20;
+  padding:28px 60px;
+  display:flex;
+  justify-content:center;
+  gap:80px;
 }
+.stat{text-align:center;color:#fff;}
+.stat strong{display:block;font-size:1.9rem;font-weight:700;letter-spacing:-0.5px;}
+.stat span{font-size:0.82rem;opacity:0.8;margin-top:4px;display:block;}
 
-header h1{
-    font-size:2.8rem;
-    margin-bottom:10px;
+/* SECTION */
+.section{max-width:1300px;margin:0 auto;padding:60px 60px;}
+.section-label{font-size:0.78rem;font-weight:600;color:#1b5e20;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.section-title{font-size:2rem;font-weight:700;color:#111;letter-spacing:-0.5px;margin-bottom:40px;}
+
+/* CULTURA CARDS */
+.cultura-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:28px;}
+.cultura-card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #e8e8e0;transition:box-shadow 0.3s;}
+.cultura-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.10);}
+.cultura-card img{width:100%;height:220px;object-fit:cover;display:block;}
+.card-body{padding:24px;}
+.card-tag{display:inline-block;background:#e8f5e9;color:#1b5e20;font-size:0.75rem;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:12px;}
+.card-body h2{font-size:1.25rem;font-weight:700;color:#111;margin-bottom:16px;}
+.doenca-item{padding:14px 0;border-bottom:1px solid #f0f0e8;}
+.doenca-item:last-child{border-bottom:none;}
+.doenca-item h3{font-size:0.9rem;font-weight:600;color:#1b5e20;margin-bottom:5px;}
+.doenca-item p{font-size:0.85rem;color:#666;line-height:1.6;}
+.doenca-item em{color:#444;font-style:italic;}
+
+/* GALERIA */
+.galeria-section{background:#fff;padding:60px 0;}
+.galeria-inner{max-width:1300px;margin:0 auto;padding:0 60px;}
+.foto-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:0;}
+.foto-grid img{width:100%;height:200px;object-fit:cover;border-radius:10px;display:block;transition:transform 0.3s;}
+.foto-grid img:hover{transform:scale(1.03);}
+
+/* FOOTER */
+footer{background:#111;color:#fff;padding:56px 60px 32px;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-brand .logo-icon{background:#2e7d32;}
+.footer-brand .logo-text{color:#fff;font-size:1.1rem;}
+.footer-brand p{color:#aaa;font-size:0.85rem;line-height:1.7;margin-top:14px;max-width:280px;}
+.footer-col h4{font-size:0.82rem;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul li a{color:#ccc;text-decoration:none;font-size:0.88rem;transition:color 0.2s;}
+.footer-col ul li a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid #2a2a2a;padding-top:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:0.82rem;color:#777;}
+.footer-tags{display:flex;gap:10px;flex-wrap:wrap;}
+.footer-tag{background:#1e1e1e;color:#888;font-size:0.75rem;padding:4px 12px;border-radius:20px;border:1px solid #333;}
+
+/* CERTIFICADO no footer */
+.cert-box{background:#1a2f1a;border:1px solid #2e7d32;border-radius:10px;padding:20px 24px;margin-top:32px;}
+.cert-box h3{font-size:0.85rem;font-weight:600;color:#81c784;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:14px;}
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;}
+.cert-item{font-size:0.82rem;color:#aaa;}
+.cert-item strong{color:#ddd;}
+
+/* COOKIE BANNER */
+#cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;
+  background:#fff;
+  border-top:1px solid #e0e0d8;
+  padding:18px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  z-index:9999;
+  box-shadow:0 -4px 24px rgba(0,0,0,0.08);
+  flex-wrap:wrap;
 }
+.cookie-text{font-size:0.85rem;color:#555;line-height:1.6;max-width:700px;}
+.cookie-text a{color:#1b5e20;text-decoration:underline;}
+.cookie-btns{display:flex;gap:10px;flex-shrink:0;}
+.btn-cookie-decline{background:#fff;border:1.5px solid #ccc;color:#555;padding:9px 20px;border-radius:6px;font-size:0.84rem;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.btn-cookie-decline:hover{border-color:#999;color:#333;}
+.btn-cookie-accept{background:#1b5e20;color:#fff;border:none;padding:9px 22px;border-radius:6px;font-size:0.84rem;font-weight:600;cursor:pointer;transition:background 0.2s;}
+.btn-cookie-accept:hover{background:#145214;}
 
-header p{
-    font-size:1.1rem;
-}
-
-.container{
-    width:90%;
-    max-width:1300px;
-    margin:auto;
-    padding:30px 0;
-}
-
-.cultura{
-    display:flex;
-    align-items:center;
-    gap:30px;
-    background:rgba(255,255,255,0.96);
-    margin-bottom:35px;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,0.25);
-}
-
-.cultura img{
-    width:45%;
-    height:420px;
-    object-fit:cover;
-    transition:0.5s;
-}
-
-.cultura img:hover{
-    transform:scale(1.08);
-    filter:brightness(1.1);
-}
-
-.info{
-    padding:25px;
-}
-
-.info h2{
-    color:#2e7d32;
-    margin-bottom:15px;
-    font-size:2rem;
-}
-
-.doenca{
-    background:#e8f5e9;
-    padding:15px;
-    margin:15px 0;
-    border-left:6px solid #2e7d32;
-    border-radius:10px;
-}
-
-.doenca h3{
-    color:#1b5e20;
-    margin-bottom:8px;
-}
-
-.galeria{
-    background:rgba(255,255,255,0.96);
-    padding:25px;
-    border-radius:18px;
-    margin-top:20px;
-}
-
-.galeria h2{
-    text-align:center;
-    color:#2e7d32;
-    margin-bottom:20px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.grid img{
-    width:100%;
-    height:230px;
-    object-fit:cover;
-    border-radius:12px;
-    transition:0.4s;
-}
-
-.grid img:hover{
-    transform:scale(1.05);
-    box-shadow:0 8px 20px rgba(0,0,0,0.3);
-}
-
-footer{
-    background:rgba(27,94,32,0.97);
-    color:white;
-    text-align:center;
-    padding:30px;
-    margin-top:30px;
-}
-
-footer h3{
-    margin-bottom:10px;
-}
-
-.certificado{
-    margin-top:15px;
-    background:rgba(255,255,255,0.1);
-    padding:15px;
-    border-radius:10px;
-}
-
-@media(max-width:768px){
-
-    .cultura{
-        flex-direction:column;
-    }
-
-    .cultura img{
-        width:100%;
-        height:250px;
-    }
-
-    header h1{
-        font-size:2rem;
-    }
+@media(max-width:900px){
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .hero{flex-direction:column;padding:40px 20px;}
+  .hero-img{max-width:100%;}
+  .stats-bar{flex-wrap:wrap;gap:32px;padding:28px 20px;}
+  .section{padding:40px 20px;}
+  .galeria-inner{padding:0 20px;}
+  .foto-grid{grid-template-columns:repeat(2,1fr);}
+  footer{padding:40px 20px 24px;}
+  .footer-grid{grid-template-columns:1fr;}
+  .cert-grid{grid-template-columns:1fr;}
+  #cookie-banner{padding:16px 20px;}
 }
 </style>
 </head>
-
 <body>
 
-<header>
-    <h1>🌱 Principais Doenças da Soja, Trigo e Milho 🌾</h1>
-    <p>Projeto Agrinho 2026 - Educação Ambiental e Agricultura Sustentável</p>
-</header>
+<!-- NAVEGAÇÃO -->
+<nav>
+  <div class="logo">
+    <div class="logo-icon">🌱</div>
+    <span class="logo-text">Agrinho 2026</span>
+  </div>
+  <div class="nav-links">
+    <a href="#">Início</a>
+    <a href="#">Culturas</a>
+    <a href="#">Doenças</a>
+    <a href="#">Galeria</a>
+    <a href="#">Sobre</a>
+  </div>
+  <a href="#culturas" class="nav-cta">Ver Culturas</a>
+</nav>
 
-<div class="container">
+<!-- HERO -->
+<div style="background:#fff;">
+<div class="hero">
+  <div class="hero-text">
+    <span class="badge">🏆 Projeto Agrinho 2026</span>
+    <h1>Proteção e Saúde das <span>Lavouras Brasileiras</span></h1>
+    <p>Conheça as principais doenças que afetam a soja, o trigo e o milho — e a importância do manejo sustentável para garantir uma agricultura produtiva e responsável.</p>
+    <div class="hero-btns">
+      <a href="#culturas" class="btn-primary">Explorar Doenças</a>
+      <a href="#galeria" class="btn-outline">Ver Galeria</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Lavoura brasileira">
+  </div>
+</div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><strong>3</strong><span>Culturas Abordadas</span></div>
+  <div class="stat"><strong>6+</strong><span>Doenças Documentadas</span></div>
+  <div class="stat"><strong>100%</strong><span>Conteúdo Educativo</span></div>
+  <div class="stat"><strong>2026</strong><span>Edição Agrinho</span></div>
+</div>
+
+<!-- CULTURAS -->
+<section id="culturas" class="section">
+  <p class="section-label">Culturas Analisadas</p>
+  <h2 class="section-title">Principais Doenças por Cultura</h2>
+  <div class="cultura-grid">
 
     <!-- SOJA -->
-    <div class="cultura">
-        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=900&q=80" alt="Lavoura de Soja">
-
-        <div class="info">
-            <h2>🌱 Soja</h2>
-
-            <div class="doenca">
-                <h3>Ferrugem Asiática</h3>
-                <p>
-                    A ferrugem asiática é causada pelo fungo
-                    <strong>Phakopsora pachyrhizi</strong>.
-                    É uma das doenças mais perigosas da soja,
-                    provocando manchas nas folhas e desfolha precoce.
-                </p>
-                <p>
-                    Quando não controlada, pode reduzir
-                    significativamente a produtividade da lavoura.
-                </p>
-            </div>
-
-            <div class="doenca">
-                <h3>Mofo Branco</h3>
-                <p>
-                    O mofo branco é causado pelo fungo
-                    <strong>Sclerotinia sclerotiorum</strong>.
-                </p>
-                <p>
-                    Forma uma estrutura branca semelhante ao algodão
-                    e compromete o desenvolvimento das plantas.
-                </p>
-            </div>
+    <div class="cultura-card">
+      <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=900&q=80" alt="Lavoura de Soja">
+      <div class="card-body">
+        <span class="card-tag">🌱 Soja</span>
+        <h2>Doenças da Soja</h2>
+        <div class="doenca-item">
+          <h3>Ferrugem Asiática</h3>
+          <p>Causada pelo fungo <em>Phakopsora pachyrhizi</em>. Provoca manchas nas folhas e desfolha precoce, podendo reduzir drasticamente a produtividade quando não controlada.</p>
         </div>
+        <div class="doenca-item">
+          <h3>Mofo Branco</h3>
+          <p>Causado pelo fungo <em>Sclerotinia sclerotiorum</em>. Forma estrutura branca semelhante ao algodão e compromete o desenvolvimento das plantas.</p>
+        </div>
+      </div>
     </div>
 
     <!-- TRIGO -->
-    <div class="cultura">
-        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Lavoura de Trigo">
-
-        <div class="info">
-            <h2>🌾 Trigo</h2>
-
-            <div class="doenca">
-                <h3>Giberela</h3>
-                <p>
-                    A giberela é causada por fungos do gênero
-                    <strong>Fusarium</strong>.
-                </p>
-                <p>
-                    Afeta diretamente as espigas, reduzindo a
-                    qualidade e o rendimento dos grãos.
-                </p>
-            </div>
-
-            <div class="doenca">
-                <h3>Ferrugem da Folha</h3>
-                <p>
-                    Caracterizada por pequenas pústulas alaranjadas
-                    que aparecem nas folhas.
-                </p>
-                <p>
-                    Reduz a fotossíntese e compromete a produção.
-                </p>
-            </div>
+    <div class="cultura-card">
+      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Lavoura de Trigo">
+      <div class="card-body">
+        <span class="card-tag">🌾 Trigo</span>
+        <h2>Doenças do Trigo</h2>
+        <div class="doenca-item">
+          <h3>Giberela</h3>
+          <p>Causada por fungos do gênero <em>Fusarium</em>. Afeta diretamente as espigas, reduzindo a qualidade e o rendimento dos grãos colhidos.</p>
         </div>
+        <div class="doenca-item">
+          <h3>Ferrugem da Folha</h3>
+          <p>Caracterizada por pequenas pústulas alaranjadas nas folhas. Reduz a fotossíntese e compromete a produção de forma significativa.</p>
+        </div>
+      </div>
     </div>
 
     <!-- MILHO -->
-    <div class="cultura">
-        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=900&q=80" alt="Lavoura de Milho">
-
-        <div class="info">
-            <h2>🌽 Milho</h2>
-
-            <div class="doenca">
-                <h3>Cercosporiose</h3>
-                <p>
-                    Doença causada pelo fungo
-                    <strong>Cercospora zeae-maydis</strong>.
-                </p>
-                <p>
-                    Produz manchas alongadas e cinzentas nas folhas,
-                    reduzindo a produtividade da lavoura.
-                </p>
-            </div>
-
-            <div class="doenca">
-                <h3>Ferrugem Polissora</h3>
-                <p>
-                    Provocada pelo fungo
-                    <strong>Puccinia polysora</strong>.
-                </p>
-                <p>
-                    Produz pústulas marrons nas folhas e interfere
-                    no crescimento saudável das plantas.
-                </p>
-            </div>
+    <div class="cultura-card">
+      <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=900&q=80" alt="Lavoura de Milho">
+      <div class="card-body">
+        <span class="card-tag">🌽 Milho</span>
+        <h2>Doenças do Milho</h2>
+        <div class="doenca-item">
+          <h3>Cercosporiose</h3>
+          <p>Causada pelo fungo <em>Cercospora zeae-maydis</em>. Produz manchas alongadas e cinzentas nas folhas, reduzindo a produtividade da lavoura.</p>
         </div>
+        <div class="doenca-item">
+          <h3>Ferrugem Polissora</h3>
+          <p>Provocada pelo fungo <em>Puccinia polysora</em>. Produz pústulas marrons nas folhas e interfere no crescimento saudável das plantas.</p>
+        </div>
+      </div>
     </div>
 
-    <!-- GALERIA -->
-    <div class="galeria">
-        <h2>📸 Galeria Agrícola</h2>
+  </div>
+</section>
 
-        <div class="grid">
-            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80" alt="Soja">
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Trigo">
-            <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=80" alt="Milho">
-            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80" alt="Agricultura">
-        </div>
+<!-- GALERIA -->
+<div class="galeria-section" id="galeria">
+  <div class="galeria-inner">
+    <p class="section-label">Imagens do Campo</p>
+    <h2 class="section-title">Galeria Agrícola</h2>
+    <div class="foto-grid">
+      <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80" alt="Soja">
+      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Trigo">
+      <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=80" alt="Milho">
+      <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80" alt="Agricultura">
     </div>
-
+  </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
-
-    <h3>🏆 Certificado de Conscientização Ambiental</h3>
-
-    <p>
-        Este projeto foi desenvolvido com o objetivo de promover
-        o conhecimento sobre a agricultura sustentável e a importância
-        da preservação do meio ambiente.
-    </p>
-
-    <div class="certificado">
-        <p><strong>Aluno(a):</strong> SEU NOME AQUI</p>
-        <p><strong>E-mail:</strong> seuemail@exemplo.com</p>
-        <p><strong>Projeto:</strong> Agrinho 2026</p>
-        <p><strong>Tema:</strong> Doenças da Soja, Trigo e Milho</p>
-        <p><strong>Reconhecimento:</strong> Participação em ações de conscientização ambiental e valorização da agricultura sustentável.</p>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:0;">
+        <div class="logo-icon" style="background:#2e7d32;">🌱</div>
+        <span class="logo-text" style="color:#fff;font-size:1.1rem;">Agrinho 2026</span>
+      </div>
+      <p>Projeto educacional dedicado à conscientização ambiental e à valorização da agricultura sustentável no Brasil.</p>
     </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#culturas">Culturas</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#">Sobre o Projeto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Culturas</h4>
+      <ul>
+        <li><a href="#">Soja</a></li>
+        <li><a href="#">Trigo</a></li>
+        <li><a href="#">Milho</a></li>
+        <li><a href="#">Outras Lavouras</a></li>
+      </ul>
+    </div>
+  </div>
 
-    <p style="margin-top:15px;">
-        © 2026 - Projeto Educacional Agrinho
-    </p>
+  <!-- CERTIFICADO -->
+  <div class="cert-box">
+    <h3>🏆 Certificado de Participação — Agrinho 2026</h3>
+    <div class="cert-grid">
+      <div class="cert-item"><strong>Aluno(a):</strong> SEU NOME AQUI</div>
+      <div class="cert-item"><strong>E-mail:</strong> seuemail@exemplo.com</div>
+      <div class="cert-item"><strong>Projeto:</strong> Agrinho 2026</div>
+      <div class="cert-item"><strong>Tema:</strong> Doenças da Soja, Trigo e Milho</div>
+      <div class="cert-item" style="grid-column:1/-1;"><strong>Reconhecimento:</strong> Participação em ações de conscientização ambiental e valorização da agricultura sustentável.</div>
+    </div>
+  </div>
 
+  <div class="footer-bottom">
+    <p>© 2026 Projeto Educacional Agrinho. Todos os direitos reservados.</p>
+    <div class="footer-tags">
+      <span class="footer-tag">Educação Ambiental</span>
+      <span class="footer-tag">Agricultura Sustentável</span>
+      <span class="footer-tag">Agrinho 2026</span>
+    </div>
+  </div>
 </footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <p class="cookie-text">
+    🍪 Utilizamos cookies para melhorar sua experiência de navegação e garantir o funcionamento correto deste site. Ao continuar, você concorda com nossa
+    <a href="#">Política de Privacidade</a> e o uso de cookies essenciais.
+  </p>
+  <div class="cookie-btns">
+    <button class="btn-cookie-decline" onclick="document.getElementById('cookie-banner').style.display='none'">Recusar</button>
+    <button class="btn-cookie-accept" onclick="document.getElementById('cookie-banner').style.display='none'">Aceitar Cookies</button>
+  </div>
+</div>
 
 </body>
 </html>
-```
